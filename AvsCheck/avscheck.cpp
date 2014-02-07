@@ -108,13 +108,14 @@ int main(int argc, char* argv[]) {
     printf("Interval: %d\n", interval);
     printf("-------------------------------\n");
 
+    BYTE* s1 = (BYTE*) malloc(sizeof(BYTE) * frame_size);
+    BYTE* s2 = (BYTE*) malloc(sizeof(BYTE) * frame_size);
+
     for (int i = 0, j = 0; i < len; i += interval, j++) {
         printf("Fetching frames %d...\r", i);
 
         AvsVideoFrame src1 = clip1->GetFrame(i, env1);
         AvsVideoFrame src2 = clip2->GetFrame(i, env2);
-        BYTE* s1 = (BYTE*) malloc(sizeof(BYTE) * frame_size);
-        BYTE* s2 = (BYTE*) malloc(sizeof(BYTE) * frame_size);
 
         store_frame(s1, src1, vi);
         store_frame(s2, src2, vi);
