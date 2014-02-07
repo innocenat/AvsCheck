@@ -28,7 +28,6 @@ extern std::weak_ptr<AvsEnv> __avs_env_global;
 class AvsEnv
 {
     friend class AvsScriptEnvironment;
-    friend class std::shared_ptr<AvsEnv>;
 public:
     virtual ~AvsEnv() {
         ExitAvisynth();
