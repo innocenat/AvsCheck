@@ -8,6 +8,7 @@
 #include <avisynth.h>
 #include <windows.h>
 #include <memory>
+#include <cstring>
 
 // Predefined class
 class AvsEnv;
@@ -58,8 +59,21 @@ public:
         }
 
         const AVS_Linkage* linkage = env->GetAVSLinkage();
+        AVS_linkage = linkage;
 
-        AvsEnv* p_avs_env = new AvsEnv(linkage, env, dll);
+        char* version = nullptr;
+
+        try {
+            AVSValue avsVersion;
+            avsVersion = env->Invoke("VersionString", AVSValue(&avsVersion, 0));
+
+            const char* origVersion = avsVersion.AsString();
+            int len = strlen(origVersion) + 8;
+
+            version = new char[len];
+            strcpy_s(version, len, origVersion);
+        } catch (IScriptEnvironment::NotFound) { version = nullptr; }
+        AvsEnv* p_avs_env = new AvsEnv(linkage, env, dll, version);
         std::shared_ptr<AvsEnv> avs_env(p_avs_env);
         avs_env->self = avs_env;
 
@@ -75,16 +89,22 @@ public:
         AVS_linkage = nullptr;
     }
 
+    const char* GetVersion() {
+        return version;
+    }
+
     void DestroyAvisynth() {
         self.reset();
     }
 
 private:
-    AvsEnv(const AVS_Linkage* l, IScriptEnvironment* e, HINSTANCE dll) : linkage(l), env(e), dll(dll) {}
+    AvsEnv(const AVS_Linkage* l, IScriptEnvironment* e, HINSTANCE dll, const char* version) : linkage(l), env(e), dll(dll), version(version) {}
 
     const AVS_Linkage * linkage;
     IScriptEnvironment* env;
     HINSTANCE dll;
+
+    const char* version;
 
     std::weak_ptr<AvsEnv> self;
 };
@@ -110,6 +130,10 @@ public:
     operator IScriptEnvironment*() {
         ENTER_AVISYNTH(avs_env);
         return env;
+    }
+
+    const char* GetVersion() {
+        return avs_env->GetVersion();
     }
 
 private:

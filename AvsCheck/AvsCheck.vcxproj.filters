@@ -13,15 +13,63 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\test">
+      <UniqueIdentifier>{1b2d6cc9-167d-4a78-8702-64d515ad2ad4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\test">
+      <UniqueIdentifier>{de426143-937d-46b8-808e-8e5cc312642c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\tester">
+      <UniqueIdentifier>{69fd10ab-9472-4036-8e12-096bfcbcfc5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\tester">
+      <UniqueIdentifier>{1975abb3-ac47-457e-b0c5-d8786a06a74a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="avsenv.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="parser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="test\testcase.h">
+      <Filter>Header Files\test</Filter>
+    </ClInclude>
+    <ClInclude Include="test\tester.h">
+      <Filter>Header Files\test</Filter>
+    </ClInclude>
+    <ClInclude Include="logger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="avs_manager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="test\framelist.h">
+      <Filter>Header Files\test</Filter>
+    </ClInclude>
+    <ClInclude Include="test\tester\dll_output_sse2.h">
+      <Filter>Header Files\tester</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="avscheck.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="parser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test\testcase.cpp">
+      <Filter>Source Files\test</Filter>
+    </ClCompile>
+    <ClCompile Include="logger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test\framelist.cpp">
+      <Filter>Source Files\test</Filter>
+    </ClCompile>
+    <ClCompile Include="test\tester\dll_output_sse2.cpp">
+      <Filter>Source Files\tester</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

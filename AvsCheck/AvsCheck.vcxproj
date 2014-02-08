@@ -49,6 +49,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <AssemblerOutput>AssemblyCode</AssemblerOutput>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -61,6 +62,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
+      <AssemblerOutput>AssemblyCode</AssemblerOutput>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -70,9 +72,21 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="avsenv.h" />
+    <ClInclude Include="avs_manager.h" />
+    <ClInclude Include="logger.h" />
+    <ClInclude Include="parser.h" />
+    <ClInclude Include="test\framelist.h" />
+    <ClInclude Include="test\tester\dll_output_sse2.h" />
+    <ClInclude Include="test\testcase.h" />
+    <ClInclude Include="test\tester.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="avscheck.cpp" />
+    <ClCompile Include="parser.cpp" />
+    <ClCompile Include="logger.cpp" />
+    <ClCompile Include="test\framelist.cpp" />
+    <ClCompile Include="test\tester\dll_output_sse2.cpp" />
+    <ClCompile Include="test\testcase.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
