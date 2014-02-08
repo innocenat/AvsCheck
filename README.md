@@ -1,4 +1,17 @@
 AvsCheck
 =============
 
-Another simple testing code for Avisynth to ease development of core filter. You'd probably want https://github.com/tp7/avs-test more though. I created this because I want to learn Avisynth API and it's fun, and I don't exactly like C# for this kind of work (sorry, tp7). It will probably evolve though.
+Another testing framework to help do regression test on Avisynth's filter development. Currently only support core filter testing, but adding more testing routines should be easy with current framework.
+
+### Roadmap
+ - Support for performance testing and non-core filter testing
+ - Configurable strictness of output comparision
+ - Better test case creation
+   - Multi-line support
+   - Inclusion of other file
+ - Test against series of saved image file.
+ - Make output more colorful.
+
+
+ ### Similiar project
+  - https://github.com/tp7/avs-test
