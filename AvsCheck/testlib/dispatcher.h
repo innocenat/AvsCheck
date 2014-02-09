@@ -12,6 +12,7 @@
 #   define AVSC_DISPATCH_REGISTER_FUNC(name)           decltype(&___##name##_dispatch__) name = ___##name##_dispatch__
 #endif
 
-#define AVSC_SET_FUNC(name, name2)                     name = name2
+#include "cpuid.h"
+#define AVSC_DISPATCH(flag, name, name2)               if ((avsc_get_cpu_flag() & flag) == flag && (name = name2) != nullptr) return name2
 
 #endif

@@ -94,6 +94,7 @@
     <ClCompile Include="tester\dll_output.cpp" />
     <ClCompile Include="testcase.cpp" />
     <ClCompile Include="testlib\output.cpp" />
+    <ClCompile Include="testlib\output_sse2.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -12,7 +12,7 @@
 
 enum TestStatus
 {
-    AVSC_PASSED, AVSC_PARTIAL, AVSC_FAIL, AVSC_WTF
+    AVSC_PASSED, AVSC_PARTIAL, AVSC_FAIL, AVSC_WTF, AVSC_ERROR
 };
 
 // -----------------------------------------------
@@ -41,6 +41,15 @@ enum TestStatus
 #define AVSC_TEST_PARTIAL(msg_)        \
     _____result.status = AVSC_PARTIAL; \
     _____result.msg = msg_;            \
+    return _____result;
+
+#define AVSC_TEST_ERROR(msg_)          \
+    _____result.status = AVSC_ERROR;   \
+    _____result.msg = msg_;            \
+    return _____result;
+
+#define AVSC_TEST_WTF()            \
+    _____result.status = AVSC_WTF; \
     return _____result;
 
 // -----------------------------------------------

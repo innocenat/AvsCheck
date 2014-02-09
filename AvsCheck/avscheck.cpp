@@ -91,9 +91,10 @@ int main(int argc, char* argv[]) {
 
             avsc_log(NORMAL, "%79s\r", ""); // Clear any existing line
             switch (r.status) {
-            case AVSC_FAIL:    avsc_log(NORMAL, "[FAIL] "); error++;  break;
-            case AVSC_PARTIAL: avsc_log(NORMAL, "[PART] "); partial++; break;
+            case AVSC_FAIL:    avsc_log(NORMAL, "[FAIL] "); error++;    break;
+            case AVSC_PARTIAL: avsc_log(NORMAL, "[PART] "); partial++;  break;
             case AVSC_PASSED:  avsc_log(NORMAL, "[ OK ] "); passed++;   break;
+            case AVSC_ERROR:   avsc_log(NORMAL, "[ ERR] ");             break;
             default:           avsc_log(NORMAL, "[WTF?] "); r.msg.assign("It looks like this tester did not do anything :-(");
             }
 

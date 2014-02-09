@@ -32,7 +32,7 @@ AVSC_TESTER_MAIN(DllOutputTester) {
         avsc_log(ERR, "AvisynthError: %s\n", err.msg);
         AVSC_TEST_FAIL("AvisynthError occur.");
     }
-    if (!val1.IsClip()) {\
+    if (!val1.IsClip()) {
         AVSC_TEST_FAIL("Reference DLL does not return clip on command.");
     }
     clip1 = val1.AsClip();
@@ -72,10 +72,14 @@ AVSC_TESTER_MAIN(DllOutputTester) {
             double avg;
             int max;
 
-            avsc_compare_output_planar(frame1->GetReadPtr(plane), frame2->GetReadPtr(plane),
-                                       frame1->GetPitch(plane), frame2->GetPitch(plane),
-                                       frame1->GetRowSize(plane), frame1->GetHeight(plane),
-                                       &avg, &max);
+            bool r = avsc_compare_output_planar(frame1->GetReadPtr(plane), frame2->GetReadPtr(plane),
+                                                frame1->GetPitch(plane), frame2->GetPitch(plane),
+                                                frame1->GetRowSize(plane), frame1->GetHeight(plane),
+                                                &avg, &max);
+
+            if (!r) {
+                AVSC_TEST_ERROR("Tester doesn't support current architecture.");
+            }
 
             avsc_log(VERBOSE, "Frame %d: plane=%d avg=%lf, max=%d\n", frame, plane, avg, max);
 
