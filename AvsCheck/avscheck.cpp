@@ -90,7 +90,7 @@ int main(int argc, char* argv[]) {
         }
     }
 
-    avsc_log(NORMAL, "---------------------------------------------\n");
+    avsc_log(NORMAL, "-----------------------------------------------------------------------\n");
     int total = p.NumTestCase();
     avsc_log(NORMAL, "         Total: %d\n", total);
     avsc_log(NORMAL, "        Passed: %d (%d%%)\n", passed, 100 * passed / total);

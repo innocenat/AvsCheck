@@ -62,12 +62,12 @@ static inline void frame_diff_planar(const BYTE* p1, const BYTE* p2, int p1_pitc
 AVSC_TESTER_MAIN(DllOutputTesterSSE2) {
     AVSC_TESTER_ENTER;
 
-    if (AVSC_NUM_AVS < 1) {
+    if (AVSC_NUM_AVS < dll) {
         AVSC_TEST_FAIL("Only single DLL loaded, cannot check between two DLLs.")
     }
 
     AvsScriptEnvironment env1 = AVSC_AVS();
-    AvsScriptEnvironment env2 = AVSC_AVS(0);
+    AvsScriptEnvironment env2 = AVSC_AVS(dll - 1);
     
     AVSC_AVS_INIT(env1);
     AVSC_AVS_INIT(env2);

@@ -36,8 +36,10 @@ std::shared_ptr<Tester> Testcase::GetTester() {
         return std::shared_ptr<Tester>();
     }
 
+    string dll = FindKey("dll", "1");
+
     avsc_log(VERBOSE, "\nTestcase: Using DLLOutputTester for test case \"%s\"\n", name.c_str());
-    t = new DllOutputTesterSSE2(cmd, frame_list);
+    t = new DllOutputTesterSSE2(cmd, frame_list, stoi(dll));
 
     return std::shared_ptr<Tester>(t);
 }

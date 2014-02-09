@@ -13,7 +13,7 @@
 AVSC_TESTER(DllOutputTesterSSE2)
 {
 public:
-    DllOutputTesterSSE2(std::string cmd, std::shared_ptr<Framelist> frame_list) : cmd(cmd), frame_list(frame_list) {}
+    DllOutputTesterSSE2(std::string cmd, std::shared_ptr<Framelist> frame_list, int dll) : cmd(cmd), frame_list(frame_list), dll(dll) {}
     ~DllOutputTesterSSE2() {}
 
     AVSC_TESTER_MAIN_DEF;
@@ -21,6 +21,7 @@ public:
 private:
     std::string cmd;
     std::shared_ptr<Framelist> frame_list;
+    int dll;
 };
 
 #endif
