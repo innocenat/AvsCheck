@@ -8,6 +8,7 @@
 #include "avsenv.h"
 #include "parser.h"
 #include "logger.h"
+#include "test/tester/cpuid.h"
 
 #define AVSCHECK_VERSION "0.1.0"
 
@@ -61,6 +62,11 @@ int main(int argc, char* argv[]) {
         }
     }
 
+    // We require SSE2
+    if ((avsc_get_cpu_flag() & AVSC_SSE2) != AVSC_SSE2) {
+        avsc_fatal("Fatal error: SSE2-enabled CPU required.\n");
+    }
+
     Parser p(file);
     p.Parse();
 
@@ -106,5 +112,6 @@ int main(int argc, char* argv[]) {
     avsc_log(NORMAL, "         Error: %d (%d%%)\n", error, 100 * error / total);
     avsc_log(NORMAL, "-----------------------------------------------------------------------\n");
 
+    avsc_close_file();
     return 0;
 }

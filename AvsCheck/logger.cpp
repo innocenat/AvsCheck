@@ -65,3 +65,8 @@ bool avsc_set_file(const char* file) {
     return !!logger_file;
 }
 
+void avsc_close_file() {
+    if (logger_file)
+        fclose(logger_file);
+}
+

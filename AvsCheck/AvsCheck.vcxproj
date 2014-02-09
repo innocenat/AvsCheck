@@ -78,6 +78,7 @@
     <ClInclude Include="logger.h" />
     <ClInclude Include="parser.h" />
     <ClInclude Include="test\framelist.h" />
+    <ClInclude Include="test\tester\cpuid.h" />
     <ClInclude Include="test\tester\dll_output_sse2.h" />
     <ClInclude Include="test\testcase.h" />
     <ClInclude Include="test\tester.h" />
@@ -86,6 +87,7 @@
     <ClCompile Include="avscheck.cpp" />
     <ClCompile Include="parser.cpp" />
     <ClCompile Include="logger.cpp" />
+    <ClCompile Include="test\tester\cpuid.cpp" />
     <ClCompile Include="test\framelist.cpp" />
     <ClCompile Include="test\tester\dll_output_sse2.cpp" />
     <ClCompile Include="test\testcase.cpp" />

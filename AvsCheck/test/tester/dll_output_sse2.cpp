@@ -2,7 +2,7 @@
 #include <memory>
 #include <cstdint>
 #include <avisynth.h>
-#include <tmmintrin.h>
+#include <xmmintrin.h>
 
 #include "dll_output_sse2.h"
 #include "../../logger.h"

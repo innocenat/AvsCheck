@@ -51,6 +51,9 @@
     <ClInclude Include="test\tester\dll_output_sse2.h">
       <Filter>Header Files\tester</Filter>
     </ClInclude>
+    <ClInclude Include="test\tester\cpuid.h">
+      <Filter>Header Files\tester</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="avscheck.cpp">
@@ -69,6 +72,9 @@
       <Filter>Source Files\test</Filter>
     </ClCompile>
     <ClCompile Include="test\tester\dll_output_sse2.cpp">
+      <Filter>Source Files\tester</Filter>
+    </ClCompile>
+    <ClCompile Include="test\tester\cpuid.cpp">
       <Filter>Source Files\tester</Filter>
     </ClCompile>
   </ItemGroup>
