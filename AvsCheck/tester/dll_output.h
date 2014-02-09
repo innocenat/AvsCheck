@@ -10,11 +10,11 @@
 #include "../tester.h"
 #include "../framelist.h"
 
-AVSC_TESTER(DllOutputTesterSSE2)
+AVSC_TESTER(DllOutputTester)
 {
 public:
-    DllOutputTesterSSE2(std::string cmd, std::shared_ptr<Framelist> frame_list, int dll) : cmd(cmd), frame_list(frame_list), dll(dll) {}
-    ~DllOutputTesterSSE2() {}
+    DllOutputTester(std::string cmd, std::shared_ptr<Framelist> frame_list, int dll) : cmd(cmd), frame_list(frame_list), dll(dll) {}
+    ~DllOutputTester() {}
 
     AVSC_TESTER_MAIN_DEF;
 

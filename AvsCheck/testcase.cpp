@@ -11,7 +11,7 @@
 #define VAL_ERROR "[error]"
 
 // Tester file
-#include "tester/dll_output_sse2.h"
+#include "tester/dll_output.h"
 
 // TODO make more tester;
 std::shared_ptr<Tester> Testcase::GetTester() {
@@ -39,7 +39,7 @@ std::shared_ptr<Tester> Testcase::GetTester() {
     string dll = FindKey("dll", "1");
 
     avsc_log(VERBOSE, "\nTestcase: Using DLLOutputTester for test case \"%s\"\n", name.c_str());
-    t = new DllOutputTesterSSE2(cmd, frame_list, stoi(dll));
+    t = new DllOutputTester(cmd, frame_list, stoi(dll));
 
     return std::shared_ptr<Tester>(t);
 }

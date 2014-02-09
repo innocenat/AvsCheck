@@ -13,17 +13,17 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\test">
-      <UniqueIdentifier>{1b2d6cc9-167d-4a78-8702-64d515ad2ad4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\test">
-      <UniqueIdentifier>{de426143-937d-46b8-808e-8e5cc312642c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\tester">
       <UniqueIdentifier>{69fd10ab-9472-4036-8e12-096bfcbcfc5c}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\tester">
       <UniqueIdentifier>{1975abb3-ac47-457e-b0c5-d8786a06a74a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\testlib">
+      <UniqueIdentifier>{355ff2a3-9175-4efd-8469-4861641b503c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\testlib">
+      <UniqueIdentifier>{06b701a8-3a25-45b5-8e1e-cee215458f98}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -40,18 +40,24 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="framelist.h">
-      <Filter>Header Files\test</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="testcase.h">
-      <Filter>Header Files\test</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="tester.h">
-      <Filter>Header Files\test</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="tester\cpuid.h">
-      <Filter>Header Files\tester</Filter>
+    <ClInclude Include="testlib\output.h">
+      <Filter>Header Files\testlib</Filter>
     </ClInclude>
-    <ClInclude Include="tester\dll_output_sse2.h">
+    <ClInclude Include="testlib\cpuid.h">
+      <Filter>Header Files\testlib</Filter>
+    </ClInclude>
+    <ClInclude Include="testlib\dispatcher.h">
+      <Filter>Header Files\testlib</Filter>
+    </ClInclude>
+    <ClInclude Include="tester\dll_output.h">
       <Filter>Header Files\tester</Filter>
     </ClInclude>
   </ItemGroup>
@@ -66,15 +72,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="framelist.cpp">
-      <Filter>Source Files\test</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="testcase.cpp">
-      <Filter>Source Files\test</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="tester\dll_output_sse2.cpp">
-      <Filter>Source Files\tester</Filter>
+    <ClCompile Include="testlib\cpuid.cpp">
+      <Filter>Source Files\testlib</Filter>
     </ClCompile>
-    <ClCompile Include="tester\cpuid.cpp">
+    <ClCompile Include="testlib\output.cpp">
+      <Filter>Source Files\testlib</Filter>
+    </ClCompile>
+    <ClCompile Include="tester\dll_output.cpp">
       <Filter>Source Files\tester</Filter>
     </ClCompile>
   </ItemGroup>

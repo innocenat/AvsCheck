@@ -78,19 +78,22 @@
     <ClInclude Include="logger.h" />
     <ClInclude Include="parser.h" />
     <ClInclude Include="framelist.h" />
-    <ClInclude Include="tester\cpuid.h" />
-    <ClInclude Include="tester\dll_output_sse2.h" />
+    <ClInclude Include="testlib\cpuid.h" />
+    <ClInclude Include="tester\dll_output.h" />
     <ClInclude Include="testcase.h" />
     <ClInclude Include="tester.h" />
+    <ClInclude Include="testlib\dispatcher.h" />
+    <ClInclude Include="testlib\output.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="avscheck.cpp" />
     <ClCompile Include="parser.cpp" />
     <ClCompile Include="logger.cpp" />
-    <ClCompile Include="tester\cpuid.cpp" />
+    <ClCompile Include="testlib\cpuid.cpp" />
     <ClCompile Include="framelist.cpp" />
-    <ClCompile Include="tester\dll_output_sse2.cpp" />
+    <ClCompile Include="tester\dll_output.cpp" />
     <ClCompile Include="testcase.cpp" />
+    <ClCompile Include="testlib\output.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
