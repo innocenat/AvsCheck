@@ -5,6 +5,7 @@
 #include <cstdio>
 #include <cstdarg>
 #include <cstdlib>
+#include <cstring>
 
 using namespace std;
 
@@ -16,18 +17,23 @@ void logger_set_verbose(bool v) {
 }
 
 int avsc_log(LoggerLevel level, const char* msg, ...) {
-    if (level == VERBOSE && !logger_verbose)
-        return -1;
-
-    va_list v;
-    va_start(v, msg);
-
     if (logger_file) {
         va_list v2;
         va_start(v2, msg);
         vfprintf(logger_file, msg, v2);
         va_end(v2);
+
+        // To allow correct usage of \r
+        int len = strlen(msg);
+        if (msg[len - 1] == '\r')
+            fprintf(logger_file, "\n");
     }
+
+    if (level == VERBOSE && !logger_verbose)
+        return -1;
+
+    va_list v;
+    va_start(v, msg);
 
     FILE* out = level == ERR ? stderr : stdout;
     int ret = vfprintf(out, msg, v);

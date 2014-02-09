@@ -33,7 +33,6 @@ int main(int argc, char* argv[]) {
     }
 
     const char* file = nullptr;
-    const char* logfile = nullptr;
 
     { // Option parsing
         int curr = 1;
@@ -52,7 +51,7 @@ int main(int argc, char* argv[]) {
                     return -1;
                 }
                 curr++;
-                logfile = argv[curr++];
+                avsc_set_file(argv[curr++]);
             } else {
                 printf("\n"
                        "Unknown option: %s\n"
@@ -69,9 +68,9 @@ int main(int argc, char* argv[]) {
 
     shared_ptr<AvsManager> avs_manager = p.GetAvsManager();
 
-        avsc_log(NORMAL, "      Main avisynth: %s\n", avs_manager->GetAvsEnv()->GetVersion());
+        avsc_log(NORMAL, "      Main: %s\n", avs_manager->GetAvsEnv()->GetVersion());
     for (int i = 0; i < avs_manager->GetNumberOfDLL(); i++) {
-        avsc_log(NORMAL, "Testing#%02d avisynth: %s\n", i+1, avs_manager->GetAvsEnv(i+1)->GetVersion());
+        avsc_log(NORMAL, "Testing#%02d: %s\n", i+1, avs_manager->GetAvsEnv(i+1)->GetVersion());
     }
     avsc_log(NORMAL, "\n");
 

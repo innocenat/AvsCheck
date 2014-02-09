@@ -114,7 +114,6 @@ AVSC_TESTER_MAIN(DllOutputTesterSSE2) {
     int frame;
     while ((frame = frame_list->Get(num_frames)) >= 0) {
         avsc_log(NORMAL, "Processing frame %d...\r", frame);
-        avsc_log(VERBOSE, "Processing frame %d...\n", frame);
 
         AvsVideoFrame frame1 = clip1->GetFrame(frame, env1);
         AvsVideoFrame frame2 = clip2->GetFrame(frame, env2);
@@ -129,7 +128,7 @@ AVSC_TESTER_MAIN(DllOutputTesterSSE2) {
                               frame1->GetRowSize(plane), frame1->GetHeight(plane),
                               &avg, &max);
 
-            avsc_log(VERBOSE, "Plane %d: avg=%lf, max=%d\n", plane, avg, max);
+            avsc_log(VERBOSE, "Frame %d: plane=%d avg=%lf, max=%d\n", frame, plane, avg, max);
 
             if (real_max < max) real_max = max;
             if (avg_max < avg) avg_max = avg;
