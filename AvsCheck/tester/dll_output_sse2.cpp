@@ -5,7 +5,7 @@
 #include <xmmintrin.h>
 
 #include "dll_output_sse2.h"
-#include "../../logger.h"
+#include "../logger.h"
 
 static inline void frame_diff_planar(const BYTE* p1, const BYTE* p2, int p1_pitch, int p2_pitch, int width, int height, double* avg_diff, int* max_diff) {
     auto avg = _mm_setzero_si128();

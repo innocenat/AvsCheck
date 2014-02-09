@@ -10,7 +10,7 @@
 
 #include "avsenv.h"
 #include "avs_manager.h"
-#include "test/testcase.h"
+#include "testcase.h"
 
 class Parser
 {

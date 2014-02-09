@@ -6,7 +6,7 @@
 
 #include "testcase.h"
 #include "framelist.h"
-#include "../logger.h"
+#include "logger.h"
 
 #define VAL_ERROR "[error]"
 

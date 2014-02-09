@@ -7,8 +7,8 @@
 #include <string>
 #include <memory>
 
-#include "../avsenv.h"
-#include "../avs_manager.h"
+#include "avsenv.h"
+#include "avs_manager.h"
 
 enum TestStatus
 {

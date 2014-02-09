@@ -33,25 +33,25 @@
     <ClInclude Include="parser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="test\testcase.h">
-      <Filter>Header Files\test</Filter>
-    </ClInclude>
-    <ClInclude Include="test\tester.h">
-      <Filter>Header Files\test</Filter>
-    </ClInclude>
     <ClInclude Include="logger.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="avs_manager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="test\framelist.h">
+    <ClInclude Include="framelist.h">
       <Filter>Header Files\test</Filter>
     </ClInclude>
-    <ClInclude Include="test\tester\dll_output_sse2.h">
+    <ClInclude Include="testcase.h">
+      <Filter>Header Files\test</Filter>
+    </ClInclude>
+    <ClInclude Include="tester.h">
+      <Filter>Header Files\test</Filter>
+    </ClInclude>
+    <ClInclude Include="tester\cpuid.h">
       <Filter>Header Files\tester</Filter>
     </ClInclude>
-    <ClInclude Include="test\tester\cpuid.h">
+    <ClInclude Include="tester\dll_output_sse2.h">
       <Filter>Header Files\tester</Filter>
     </ClInclude>
   </ItemGroup>
@@ -62,19 +62,19 @@
     <ClCompile Include="parser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="test\testcase.cpp">
-      <Filter>Source Files\test</Filter>
-    </ClCompile>
     <ClCompile Include="logger.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="test\framelist.cpp">
+    <ClCompile Include="framelist.cpp">
       <Filter>Source Files\test</Filter>
     </ClCompile>
-    <ClCompile Include="test\tester\dll_output_sse2.cpp">
+    <ClCompile Include="testcase.cpp">
+      <Filter>Source Files\test</Filter>
+    </ClCompile>
+    <ClCompile Include="tester\dll_output_sse2.cpp">
       <Filter>Source Files\tester</Filter>
     </ClCompile>
-    <ClCompile Include="test\tester\cpuid.cpp">
+    <ClCompile Include="tester\cpuid.cpp">
       <Filter>Source Files\tester</Filter>
     </ClCompile>
   </ItemGroup>

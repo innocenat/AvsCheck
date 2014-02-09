@@ -77,20 +77,20 @@
     <ClInclude Include="avs_manager.h" />
     <ClInclude Include="logger.h" />
     <ClInclude Include="parser.h" />
-    <ClInclude Include="test\framelist.h" />
-    <ClInclude Include="test\tester\cpuid.h" />
-    <ClInclude Include="test\tester\dll_output_sse2.h" />
-    <ClInclude Include="test\testcase.h" />
-    <ClInclude Include="test\tester.h" />
+    <ClInclude Include="framelist.h" />
+    <ClInclude Include="tester\cpuid.h" />
+    <ClInclude Include="tester\dll_output_sse2.h" />
+    <ClInclude Include="testcase.h" />
+    <ClInclude Include="tester.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="avscheck.cpp" />
     <ClCompile Include="parser.cpp" />
     <ClCompile Include="logger.cpp" />
-    <ClCompile Include="test\tester\cpuid.cpp" />
-    <ClCompile Include="test\framelist.cpp" />
-    <ClCompile Include="test\tester\dll_output_sse2.cpp" />
-    <ClCompile Include="test\testcase.cpp" />
+    <ClCompile Include="tester\cpuid.cpp" />
+    <ClCompile Include="framelist.cpp" />
+    <ClCompile Include="tester\dll_output_sse2.cpp" />
+    <ClCompile Include="testcase.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

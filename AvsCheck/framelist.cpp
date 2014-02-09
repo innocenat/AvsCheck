@@ -1,6 +1,6 @@
 
 #include "framelist.h"
-#include "../logger.h"
+#include "logger.h"
 
 Framelist::Framelist() : current_pos(0), current_frame(0) {}
 

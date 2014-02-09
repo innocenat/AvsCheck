@@ -8,7 +8,7 @@
 #include "avsenv.h"
 #include "parser.h"
 #include "logger.h"
-#include "test/tester/cpuid.h"
+#include "tester/cpuid.h"
 
 #define AVSCHECK_VERSION "0.1.0"
 
