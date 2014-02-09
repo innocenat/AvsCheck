@@ -84,10 +84,10 @@ bool Parser::Parse() {
             continue;
 
         if (tokens[0] == "using:") {
-            manager->main_dll = fpath + tokens[1];
-            avsc_log(VERBOSE, "Parser: main AviSynth to load : %s\n", manager->main_dll.c_str());
+            manager->SetMainDll(fpath + tokens[1]);
+            avsc_log(VERBOSE, "Parser: main AviSynth to load : %s\n", (fpath + tokens[1]).c_str());
         } else if (tokens[0] == "test:") {
-            manager->testing_dll.push_back(fpath + tokens[1]);
+            manager->AddTestDll(fpath + tokens[1]);
             avsc_log(VERBOSE, "Parser: additional AviSynth : %s\n", (fpath + tokens[1]).c_str());
         } else if (tokens[0] == "case") {
             shared_ptr<Testcase> new_testcase = make_shared<Testcase>(tokens);

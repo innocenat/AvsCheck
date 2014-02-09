@@ -67,13 +67,22 @@ int main(int argc, char* argv[]) {
 
     int passed = 0, partial = 0, error = 0;
 
+    shared_ptr<AvsManager> avs_manager = p.GetAvsManager();
+
+        avsc_log(NORMAL, "      Main avisynth: %s\n", avs_manager->GetAvsEnv()->GetVersion());
+    for (int i = 0; i < avs_manager->GetNumberOfDLL(); i++) {
+        avsc_log(NORMAL, "Testing#%02d avisynth: %s\n", i+1, avs_manager->GetAvsEnv(i+1)->GetVersion());
+    }
+    avsc_log(NORMAL, "\n");
+
     // Run each test case
     for (size_t i = 0; i < p.NumTestCase(); i++) {
         std::shared_ptr<Testcase> testcase = p.GetTestCase(i);
         std::shared_ptr<Tester> tester = testcase->GetTester();
 
         if (tester) {
-            TestResult r = tester->Run(p.GetAvsManager(), file);
+            avsc_log(NORMAL, "Initializing...\r");
+            TestResult r = tester->Run(avs_manager, file);
 
             avsc_log(NORMAL, "%79s\r", ""); // Clear any existing line
             switch (r.status) {

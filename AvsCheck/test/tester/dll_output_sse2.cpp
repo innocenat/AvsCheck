@@ -66,8 +66,8 @@ AVSC_TESTER_MAIN(DllOutputTesterSSE2) {
         AVSC_TEST_FAIL("Only single DLL loaded, cannot check between two DLLs.")
     }
 
-    AvsScriptEnvironment env1 = AVSC_AVS();
-    AvsScriptEnvironment env2 = AVSC_AVS(dll - 1);
+    AvsScriptEnvironment env1 = AVSC_AVS(0);
+    AvsScriptEnvironment env2 = AVSC_AVS(dll);
     
     AVSC_AVS_INIT(env1);
     AVSC_AVS_INIT(env2);
